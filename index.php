@@ -29,7 +29,7 @@
     <a href="s3-6.html">Задача 3.6</a> <br>
     <br><br>
     <a href="bd_user/indexLR4.php"><h1> Переход к ЛР4</h1></a> <br>
-    
+    <a href="bd_user_5/index.php"><h1> Переход к ЛР5</h1></a> <br>
 </body>
 
 </html>
