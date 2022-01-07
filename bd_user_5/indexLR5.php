@@ -76,7 +76,7 @@
 		   		$.ajax({
 		   			url: "add.php",
 		   			type: "POST",
-		   			data: ({select: "id_uspev, data, stud_id, sub_id, ocenka", from: "uspev", zagl: "<tr> <th> id </th><th> Дата сдачи зачета </th> <th> id студента </th> <th> id предмета </th> <th> Оценка </th>  <th>Редактировать </th><th> Уничтожить </th></tr>",file:"_uspev"}) ,
+		   			data: ({select: "id_uspev,  data, stud_id, sub_id, ocenka", from: "uspev", zagl: "<tr> <th> id </th><th> Дата сдачи зачета </th> <th> id студента </th> <th> id предмета </th> <th> Оценка </th>  <th>Редактировать </th><th> Уничтожить </th></tr>",file:"_uspev"}) ,
 		   			dataType: "html",
 		   			success: function(data){
 		   				$("#table3").parent().html(data);

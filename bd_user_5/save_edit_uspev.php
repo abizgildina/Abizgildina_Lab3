@@ -9,7 +9,6 @@
 	<?php
 	include ("checkSession.php");
 	include ("connectBD.php");
-	 $mysqli = mysqli_connect(HOST, USER, PASS, DB) or die ("Невозможно	подключиться к серверу");
 	 $mysqli->query('SET NAMES UTF-8');
 	 $zapros="UPDATE uspev SET data='".$_GET['data'].
 	"', stud_id='".$_GET['stud_id']."',  sub_id='"
