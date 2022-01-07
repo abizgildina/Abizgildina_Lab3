@@ -99,7 +99,7 @@
         $result=$mysqli->query("SELECT id_uspev, data, FIO, name, ocenka FROM uspev, subject, student WHERE id_stud=stud_id and id_sub=sub_id;"); // запрос на выборку сведений о пользователях
         while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
          echo "<tr>";
-         echo "<td>" . $row['data'] . "</td>";
+         echo "<td>" . date('d-m-Y', strtotime($row['data'])). "</td>";
          echo "<td>" . $row['FIO'] . "</td>";
          echo "<td>" . $row['name'] . "</td>";
          echo "<td>" . $row['ocenka'] . "</td>";

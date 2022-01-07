@@ -45,7 +45,7 @@ while ($row=mysqli_fetch_array($result)) {
 	echo  "<td>". $row['fac'] ."</td>";
 	echo  "<td>". $row['gr'] ."</td>";
     echo  "<td>". $row['no_zk'] ."</td>";
-	echo  "<td>". $row['data'] ."</td>";
+	echo  "<td>". date('d-m-Y', strtotime($row['data'])) ."</td>";
     echo "<td>". $row['name'] ."</td>";
     echo  "<td>". $row['ocenka'] ."</td>";
 	echo  "<td>". $row['prep'] ."</td>";

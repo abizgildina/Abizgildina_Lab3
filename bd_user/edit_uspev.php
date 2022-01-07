@@ -29,12 +29,29 @@
         print "<form action='save_edit_uspev.php?id_uspev=".$_GET['id_uspev']. " method='get'>";
         print "Дата: <input name='data' type='date'
         value='".$data."'>";
-        print "<br>Номер студента: <input name='stud_id' size='20' type='text'
-        value='".$stud_id."'>";
-        print "<br>Номер предмета: <input name='sub_id' size='20' type='text'
-        value='".$sub_id."'>";
+        
+        echo "<br> Номер студента: <select name='stud_id'>";
+  	    $stud=$mysqli->query("SELECT stud_id, FIO FROM uspev, student WHERE stud_id=id_stud GROUP BY stud_id");
+		while ($row = mysqli_fetch_array($stud)) {
+			if ($stud_id == $row['stud_id']) {
+				echo "<option value='" . $row['stud_id'] ."' selected='selected'>" . $row['FIO'] ."</option>";
+			} else {echo "<option value='" . $row['stud_id'] ."'>" . $row['FIO'] ."</option>";}
+		}
+		echo "</select>";
+		
+		echo "<br> Номер предмета: <select name='sub_id'>";
+  	    $sub=$mysqli->query("SELECT sub_id, name FROM uspev, subject WHERE sub_id=id_sub GROUP BY sub_id");
+		while ($row = mysqli_fetch_array($sub)) {
+			if ($sub_id == $row['sub_id']) {
+				echo "<option value='" . $row['sub_id'] ."' selected='selected'>" . $row['name'] ."</option>";
+			} else {echo "<option value='" . $row['sub_id'] ."'>" . $row['name'] ."</option>";}
+		}
+		echo "</select>";
+        
         print "<br>Оценка: <input name='ocenka' size='20' type='text'
         value='".$ocenka."'>";
+ 
+
  
         
         print "<input type='hidden' name='id' value='".$id."'> <br>";

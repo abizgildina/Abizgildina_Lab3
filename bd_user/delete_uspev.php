@@ -15,7 +15,7 @@
 	 $mysqli = mysqli_connect(HOST, USER, PASS, DB) or die ("Невозможно
 	подключиться к серверу");
 	 $mysqli->query('SET NAMES UTF-8');
-	 $zapros="DELETE FROM uspev WHERE uspev=" . $_GET['uspev'];
+	 $zapros="DELETE FROM uspev WHERE id_uspev=" . $_GET['id_uspev'];
 	 $mysqli->query($zapros);
 	 header("Location: indexLR4.php");
 	 exit;
